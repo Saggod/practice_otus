@@ -13,6 +13,9 @@ public class MainPage_Test {
 
     @Test
     public void mainPageTest() {
+         String lessonTitle = mainPage
+                .open()
+                .getLessonTitleByIndex(1);
 
     }
 }

@@ -71,6 +71,7 @@
                 <configuration>
                     <systemPropertyVariables>
                         <browser>${browser}</browser>
+                        <base.url>https://otus.ru</base.url>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
