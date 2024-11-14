@@ -1,15 +1,20 @@
 package modules;
 
-import com.google.inject.AbstractModule;
-import com.google.inject.Provides;
-import com.google.inject.Singleton;
+import com.google.inject.*;
+import components.static_component.HeaderMenuCompoonent;
+import factory.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import pages.LessonCardPage;
 import pages.MainPage;
 
 public class GuicePageModules extends AbstractModule {
 
-    private WebDriver driver = new ChromeDriver();
+    private final WebDriver driver = new WebDriverFactory().create();
+
+    @Provides
+    private WebDriver getDriver() {
+        return driver;
+    }
 
     @Singleton
     @Provides
@@ -17,5 +22,16 @@ public class GuicePageModules extends AbstractModule {
         return new MainPage(driver);
     }
 
+    @Singleton
+    @Provides
+    public LessonCardPage getLessonCardPage() {
+        return new LessonCardPage(driver);
+    }
+
+    @Singleton
+    @Provides
+    public HeaderMenuCompoonent getHeaderMenuCompoonent() {
+        return new HeaderMenuCompoonent(driver);
+    }
 
 }

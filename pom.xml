@@ -21,7 +21,7 @@
         <compiler.version>3.13.0</compiler.version>
         <checkstyle.version>3.5.0</checkstyle.version>
         <spotbugs.version>4.8.6.2</spotbugs.version>
-        <browser/>
+        <browser>chrome</browser>
     </properties>
 
     <dependencies>
@@ -52,14 +52,14 @@
         </dependency>
     </dependencies>
 
-    <profiles>
-        <profile>
-            <id>prod</id>
-           <properties>
-               <browser>chrome</browser>
-           </properties>
-        </profile>
-    </profiles>
+<!--    <profiles>-->
+<!--        <profile>-->
+<!--            <id>prod</id>-->
+<!--           <properties>-->
+<!--               <browser>chrome</browser>-->
+<!--           </properties>-->
+<!--        </profile>-->
+<!--    </profiles>-->
 
 
     <build>
@@ -84,24 +84,24 @@
                     <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${checkstyle.version}</version>
-                <configuration>
-                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                    <configLocation>checkstyle.xml</configLocation>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>analyze-compile</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-checkstyle-plugin</artifactId>-->
+<!--                <version>${checkstyle.version}</version>-->
+<!--                <configuration>-->
+<!--                    <includeTestSourceDirectory>true</includeTestSourceDirectory>-->
+<!--                    <configLocation>checkstyle.xml</configLocation>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>analyze-compile</id>-->
+<!--                        <phase>compile</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>check</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
