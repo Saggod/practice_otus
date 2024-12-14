@@ -4,6 +4,7 @@ import com.google.inject.*;
 import components.static_component.HeaderMenuCompoonent;
 import factory.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
+import pages.CategoriesPage;
 import pages.LessonCardPage;
 import pages.MainPage;
 
@@ -30,8 +31,15 @@ public class GuicePageModules extends AbstractModule {
 
     @Singleton
     @Provides
+    public CategoriesPage categoriesPage() {
+        return new CategoriesPage(driver);
+    }
+    @Singleton
+    @Provides
     public HeaderMenuCompoonent getHeaderMenuCompoonent() {
         return new HeaderMenuCompoonent(driver);
     }
+
+
 
 }

@@ -21,9 +21,13 @@ public class MainPage_Test {
          String lessonTitle = mainPage
                 .open()
                 .getLessonTitleByIndex(1);
-//         mainPage.clickLessonTitleByTitle(lessonTitle)
-//                 .pageHeaderShoulbBeSameAs(lessonTitle);
+         mainPage.clickLessonTitleByTitle(lessonTitle)
+                 .pageHeaderShoulbBeSameAs(lessonTitle);
 
+    }
+
+    @Test
+    public void categoriesPageTest() {
 
 
 
